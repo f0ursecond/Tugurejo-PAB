@@ -1,9 +1,13 @@
 package com.example.pab_tugurejo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
@@ -15,6 +19,8 @@ import java.util.Map;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    private EditText search_bar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,32 +28,19 @@ public class MainActivity2 extends AppCompatActivity {
 
 
         ListView list = (ListView) findViewById(R.id.ListView);
+        SearchView searchView = (SearchView) findViewById(R.id.search_bar);
+
+
+
 
         HashMap<String, String> nameAddresses = new HashMap<>();
+
         nameAddresses.put("Budi Haryanto", "RT 5/RW 2");
         nameAddresses.put("Sri Mulyani", "RT 3/RW 2");
         nameAddresses.put("Rosniati Harefa", "RT 5/RW 1");
         nameAddresses.put("Sugiyono", "RT 5/RW 2");
         nameAddresses.put("Sukarman", "RT 2/RW 2");
-        nameAddresses.put("Shroud", "RT 1/RW 2");
-        nameAddresses.put("Didick", "RT 5/RW 2");
-        nameAddresses.put("Adi", "RT 3/RW 2");
-        nameAddresses.put("Bagong", "RT 5/RW 1");
-        nameAddresses.put("Rian", "RT 5/RW 2");
-        nameAddresses.put("Bambang", "RT 2/RW 2");
-        nameAddresses.put("Tenz", "RT 1/RW 2");
-        nameAddresses.put("Hanto", "RT 5/RW 2");
-        nameAddresses.put("jul", "RT 3/RW 2");
-        nameAddresses.put("Rosniati ", "RT 5/RW 1");
-        nameAddresses.put("Umar", "RT 5/RW 2");
-        nameAddresses.put("BIN", "RT 2/RW 2");
-        nameAddresses.put("eeyore", "RT 1/RW 2");
-        nameAddresses.put("David", "RT 5/RW 2");
-        nameAddresses.put("Rizky", "RT 3/RW 2");
-        nameAddresses.put("Bayu", "RT 5/RW 1");
-        nameAddresses.put("Emi Fukada", "RT 5/RW 2");
-        nameAddresses.put("Mia Khalifa", "RT 2/RW 2");
-        nameAddresses.put("Lana Rhoades", "RT 1/RW 2");
+
 
 
         List<HashMap<String, String>> listItems = new ArrayList<>();
@@ -68,6 +61,21 @@ public class MainActivity2 extends AppCompatActivity {
 
         list.setAdapter(adapter);
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+
+                adapter.getFilter().filter(newText);
+                return false;
+            }
+        });
 
     }
+
 }
