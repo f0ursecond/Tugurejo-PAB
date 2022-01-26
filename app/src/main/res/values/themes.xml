@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.PABTugurejo" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.PABTugurejo" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -10,9 +10,15 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-
+        <item name="android:statusBarColor">@color/purple_700</item>
+<!--        <item name="android:windowTranslucentStatus">true</item>-->
+<!--        <item name="android:windowTranslucentNavigation">true</item>-->
 
         <!-- Customize your theme here. -->
+<!--        <item name="windowNoTitle">true</item>-->
+<!--        <item name="windowActionBar">true</item>-->
+<!--        <item name="android:windowFullscreen">false</item>-->
+<!--        <item name="android:windowContentOverlay">@null</item>-->
 
     </style>
     <style name="Theme.MyApp" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -25,4 +31,6 @@
 
 
     </style>
+<!--    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+<!--    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />-->
 </resources>

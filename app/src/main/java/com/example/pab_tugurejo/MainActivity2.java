@@ -3,13 +3,17 @@ package com.example.pab_tugurejo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +24,7 @@ import java.util.Map;
 public class MainActivity2 extends AppCompatActivity {
 
     private EditText search_bar;
+    private FloatingActionButton tombol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,15 @@ public class MainActivity2 extends AppCompatActivity {
 
         ListView list = (ListView) findViewById(R.id.ListView);
         SearchView searchView = (SearchView) findViewById(R.id.search_bar);
+//        tombol = (FloatingActionButton) findViewById(R.id.tombol);
+
+//        tombol.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(MainActivity2.this, AddActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
 
@@ -75,6 +89,8 @@ public class MainActivity2 extends AppCompatActivity {
                 return false;
             }
         });
+
+
 
     }
 

@@ -42,12 +42,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-            if (userEdt.getText().toString().equals("00450") && passEdt.getText().toString().equals("admin")){
+//            if (userEdt.getText().toString().equals("00450") && passEdt.getText().toString().equals("admin")){
                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                startActivity(intent);
-            }  else {
-                //Toast.makeText(MainActivity.this,"User id & Password salah",Toast.LENGTH_LONG).show();
-            }
+//            }  else {
+//                //Toast.makeText(MainActivity.this,"User id & Password salah",Toast.LENGTH_LONG).show();
+//            }
 
 
 
